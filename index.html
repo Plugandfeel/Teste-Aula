@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Divina Estética — Cuidado Individualizado e Estética Consciente</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      /* Paleta Original Base */
+      --color-primary-brown: #584140;
+      --color-dark-brown: #332423;
+      --color-medium-brown: #6E5351;
+      --color-card-brown: #634B4A;
+      
+      /* Tom Rosa Suave Derivado da Paleta */
+      --color-bg-rose: #F2E3E1;
+      --color-card-rose: #FAF2F1;
+      --color-border-rose: rgba(110, 83, 81, 0.15);
+
+      --color-accent-rose: #E5C2C0;
+      --color-accent-dark: #8E5B58;
+      
+      --color-text-light: #FDFBFB;
+      --color-text-muted-light: #E0D5D4;
+      --color-text-dark: #332423;
+      --color-text-muted-dark: #5C4746;
+      
+      --color-border-light: rgba(229, 194, 192, 0.25);
+      
+      --font-heading: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'Plus Jakarta Sans', -apple-system, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--color-primary-brown);
+      color: var(--color-text-light);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: var(--font-heading);
+      font-weight: 600;
+      line-height: 1.25;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      font-weight: 300;
+    }
+
+    /* ESTILOS DE SEÇÕES MARRONS (PADRÃO ESCURO) */
+    .section-brown {
+      background-color: var(--color-primary-brown);
+      color: var(--color-text-light);
+    }
+
+    .section-brown .section-tag {
+      color: var(--color-accent-rose);
+    }
+
+    .section-brown .section-title {
+      color: var(--color-text-light);
+    }
+
+    .section-brown .section-subtitle {
+      color: var(--color-text-muted-light);
+    }
+
+    /* ESTILOS DE SEÇÕES ROSAS (PADRÃO CLARO) */
+    .section-rose {
+      background-color: var(--color-bg-rose);
+      color: var(--color-text-dark);
+    }
+
+    .section-rose .section-tag {
+      color: var(--color-accent-dark);
+    }
+
+    .section-rose .section-title {
+      color: var(--color-text-dark);
+    }
+
+    .section-rose .section-subtitle {
+      color: var(--color-text-muted-dark);
+    }
+
+    .section-rose p {
+      color: var(--color-text-muted-dark);
+    }
+
+    /* Botões */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 28px;
+      border-radius: 50px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border: 1px solid transparent;
+      text-align: center;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #8E706E 0%, #6E5351 100%);
+      color: var(--color-text-light);
+      border: 1px solid var(--color-accent-rose);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+
+    .btn-primary:hover {
+      background: linear-gradient(135deg, #A28280 0%, #7E615F 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      color: var(--color-accent-rose);
+      border: 1px solid var(--color-accent-rose);
+    }
+
+    .btn-secondary:hover {
+      background-color: rgba(229, 194, 192, 0.15);
+      color: var(--color-text-light);
+    }
+
+    .section-rose .btn-secondary {
+      color: var(--color-accent-dark);
+      border-color: var(--color-accent-dark);
+    }
+
+    .section-rose .btn-secondary:hover {
+      background-color: var(--color-accent-dark);
+      color: var(--color-text-light);
+    }
+
+    /* Header */
+    header {
+      padding: 20px 0;
+      border-bottom: 1px solid var(--color-border-light);
+      position: sticky;
+      top: 0;
+      background-color: rgba(88, 65, 64, 0.95);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .logo-svg {
+      width: 38px;
+      height: 38px;
+      stroke: var(--color-accent-rose);
+      fill: none;
+    }
+
+    .logo-text {
+      font-family: var(--font-heading);
+      font-size: 1.8rem;
+      letter-spacing: 3px;
+      color: var(--color-text-light);
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--color-text-muted-light);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--color-accent-rose);
+    }
+
+    section {
+      padding: 90px 0;
+      position: relative;
+    }
+
+    .section-tag {
+      display: inline-block;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    .section-title {
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+    }
+
+    .section-subtitle {
+      font-size: 1.15rem;
+      max-width: 650px;
+      margin-bottom: 40px;
+      font-weight: 300;
+    }
+
+    /* 1. HERO (FUNDO MARROM) */
+    .hero {
+      padding: 10px 0 10px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+      align-items: center;
+    }
+
+    .hero-content h1 {
+      font-size: 3.5rem;
+      line-height: 1.15;
+      margin-bottom: 20px;
+      color: var(--color-text-light);
+    }
+
+    .hero-content p {
+      font-size: 1.2rem;
+      color: var(--color-text-muted-light);
+      margin-bottom: 36px;
+    }
+
+    .img-fundo{
+        height: 60vw;
+    }
+
+    .hero-art {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 95px;
+      background-color: var(--color-card-brown);
+      border-radius: 25px;
+      border: 1px solid var(--color-border-light);
+      padding: 0px;
+      overflow: hidden;
+      height: 55vw;
+    }
+
+    .art-frame {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      width: 140px;
+      height: 140px;
+      border-top: 1px solid rgba(255, 255, 255, 0.4);
+      border-left: 1px solid rgba(255, 255, 255, 0.4);
+    }
+
+    .line-art-svg {
+      width: 100%;
+      height: auto;
+      max-width: 320px;
+      stroke: rgba(229, 194, 192, 0.8);
+    }
+
+    /* 2. SOBRE A DIVINA (FUNDO ROSA) */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .about-card {
+      background: var(--color-card-rose);
+      padding: 40px;
+      border-radius: 20px;
+      border: 1px solid var(--color-border-rose);
+      box-shadow: 0 10px 30px rgba(88, 65, 64, 0.05);
+    }
+
+    /* 3. DIFERENCIAIS (FUNDO MARROM) */
+    .differentials-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .diff-card {
+      background-color: var(--color-card-brown);
+      padding: 30px 20px;
+      border-radius: 16px;
+      border: 1px solid var(--color-border-light);
+      transition: transform 0.3s;
+    }
+
+    .diff-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .diff-number {
+      font-family: var(--font-heading);
+      font-size: 2.5rem;
+      color: var(--color-accent-rose);
+      margin-bottom: 12px;
+    }
+
+    .diff-title {
+      font-size: 1.2rem;
+      color: var(--color-text-light);
+      margin-bottom: 10px;
+    }
+
+    .diff-text {
+      font-size: 0.9rem;
+      color: var(--color-text-muted-light);
+    }
+
+    /* 4. PROCEDIMENTOS (FUNDO ROSA) */
+    .tabs-nav {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+
+    .tab-btn {
+      background: transparent;
+      border: 1px solid var(--color-accent-dark);
+      color: var(--color-text-dark);
+      padding: 10px 22px;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: var(--font-body);
+    }
+
+    .tab-btn.active, .tab-btn:hover {
+      background: var(--color-accent-dark);
+      color: var(--color-text-light);
+      font-weight: 600;
+    }
+
+    .proc-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 24px;
+    }
+
+    .proc-card {
+      background: var(--color-card-rose);
+      border-radius: 16px;
+      padding: 16px;
+      border: 1px solid var(--color-border-rose);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 20px rgba(88, 65, 64, 0.04);
+    }
+
+    .proc-card.hide {
+      display: none;
+    }
+
+    .proc-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 16px;
+    }
+
+    .proc-card h4 {
+      font-size: 1.3rem;
+      color: var(--color-text-dark);
+      margin-bottom: 8px;
+    }
+
+    .proc-card p {
+      font-size: 0.88rem;
+      color: var(--color-text-muted-dark);
+      margin-bottom: 16px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      line-height: 1.4;
+      height: 2.8em;
+    }
+
+    .proc-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      background: rgba(142, 91, 88, 0.12);
+      color: var(--color-accent-dark);
+      padding: 4px 10px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+      width: fit-content;
+      font-weight: 600;
+    }
+
+    /* Modal */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(6px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      z-index: 2000;
+    }
+
+    .modal-overlay.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-card {
+      background: var(--color-card-brown);
+      border: 1px solid var(--color-border-light);
+      border-radius: 20px;
+      max-width: 520px;
+      width: 90%;
+      padding: 36px;
+      position: relative;
+      color: var(--color-text-light);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 16px;
+      right: 20px;
+      background: transparent;
+      border: none;
+      color: var(--color-text-light);
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+
+    .modal-card h3 {
+      font-size: 2rem;
+      color: var(--color-accent-rose);
+      margin-bottom: 12px;
+    }
+
+    .modal-card p {
+      font-size: 0.95rem;
+      color: var(--color-text-muted-light);
+      margin-bottom: 24px;
+      line-height: 1.7;
+    }
+
+    /* 5. AUTORIDADE (FUNDO MARROM) */
+    .authority-box {
+      background: linear-gradient(135deg, var(--color-dark-brown) 0%, var(--color-primary-brown) 100%);
+      border-radius: 24px;
+      padding: 60px;
+      border: 1px solid var(--color-border-light);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .auth-list {
+      list-style: none;
+      margin-top: 20px;
+    }
+
+    .auth-list li {
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .auth-list li::before {
+      content: "✦";
+      color: var(--color-accent-rose);
+    }
+
+    /* 6. FAQ (FUNDO ROSA) */
+    .faq-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      background: var(--color-card-rose);
+      border: 1px solid var(--color-border-rose);
+      border-radius: 12px;
+      margin-bottom: 16px;
+      padding: 24px;
+      box-shadow: 0 4px 15px rgba(88, 65, 64, 0.03);
+    }
+
+    .faq-question {
+      font-size: 1.2rem;
+      font-family: var(--font-heading);
+      color: var(--color-text-dark);
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .faq-answer {
+      font-size: 0.95rem;
+      color: var(--color-text-muted-dark);
+      font-weight: 300;
+    }
+
+    /* 7. CTA FECHAMENTO (FUNDO MARROM) */
+    .cta-final {
+      text-align: center;
+      background: linear-gradient(180deg, var(--color-primary-brown) 0%, var(--color-dark-brown) 100%);
+      padding: 100px 0;
+    }
+
+    footer {
+      padding: 40px 0;
+      background-color: var(--color-dark-brown);
+      border-top: 1px solid var(--color-border-light);
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--color-text-muted-light);
+    }
+
+    .logo-img{
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        object-fit: cover;
+        vertical-align: middle;
+    }
+
+    @media (max-width: 992px) {
+      .hero, .about-grid, .authority-box {
+        grid-template-columns: 1fr;
+      }
+      .differentials-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .hero-content h1 {
+        font-size: 2.8rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .differentials-grid {
+        grid-template-columns: 1fr;
+      }
+      .nav-links {
+        display: none;
+      }
+      .hero-content h1 {
+        font-size: 2.2rem;
+      }
+      .section-title {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container nav-container">
+      <a href="#" class="logo">
+        <img src="logo.jpeg" alt="Logo" class="logo-img">
+        <span class="logo-text">DIVINA</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#sobre">A Divina</a></li>
+        <li><a href="#diferencial">Diferenciais</a></li>
+        <li><a href="#procedimentos">Procedimentos</a></li>
+        <li><a href="#autoridade">Profissional</a></li>
+        <li><a href="#faq">Dúvidas</a></li>
+      </ul>
+      <a href="#agendamento" class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.85rem;">Agendar Avaliação</a>
+    </div>
+  </header>
+
+  <!-- 1. HERO (FUNDO MARROM) -->
+  <section class="hero section-brown">
+    <div class="container hero-content">
+      <span class="section-tag">Divina Estética — Cuidado Consciente</span>
+      <h1>Você não precisa se transformar em outra mulher. Precisa voltar a se reconhecer.</h1>
+      <p>Aos 14, 30, 50 ou 70+. Cada fase traz novas histórias e necessidades. Na Divina, não buscamos padrões irreais: oferecemos o acolhimento e a orientação precisa para você cuidar de si sem perder sua identidade.</p>
+      <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+        <a href="#agendamento" class="btn btn-primary">Agendar minha avaliação</a>
+        <a href="#diferencial" class="btn btn-secondary">Conhecer a filosofia</a>
+      </div>
+    </div>
+    <div class="hero-art">
+      <!-- <div class="art-frame"></div>
+      <svg class="line-art-svg" viewBox="0 0 200 300" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M60 220 C60 180 80 150 110 130 C125 120 140 100 135 80 C130 55 105 45 85 55 C70 62 65 80 65 95" stroke-linecap="round"/>
+        <path d="M110 130 C100 140 85 145 75 140 C65 135 60 120 65 110" stroke-linecap="round"/>
+        <path d="M105 85 C115 85 120 90 120 95" stroke-linecap="round"/>
+        <path d="M125 150 Q 150 130 160 100 Q 140 120 125 150 Z" stroke-linecap="round"/>
+        <path d="M135 170 Q 170 160 180 130 Q 150 150 135 170 Z" stroke-linecap="round"/>
+      </svg> -->
+      <img src="wallpaper.jpeg" alt="Fundo" class="img-fundo">
+    </div>
+  </section>
+
+  <!-- 2. SOBRE A DIVINA (FUNDO ROSA) -->
+  <section id="sobre" class="section-rose">
+    <div class="container">
+      <div class="about-grid">
+        <div>
+          <span class="section-tag">A Nossa Filosofia</span>
+          <h2 class="section-title">Estética não é sobre mudar quem você é. É sobre respeitar o seu momento.</h2>
+          <p>A Divina nasceu de um incômodo simples: ver a estética moderna se transformar em uma linha de montagem de rostos e corpos iguais.</p>
+          <p>Acreditamos que você não precisa perseguir um ideal estético desenhado para outra pessoa. Você precisa de um espaço seguro, silencioso e acolhedor, onde suas queixas sejam ouvidas com atenção e técnica.</p>
+        </div>
+        <div class="about-card">
+          <h3 style="font-size: 1.8rem; margin-bottom: 16px; color: var(--color-accent-dark);">Um olhar para cada história</h3>
+          <p style="font-size: 0.95rem;">"Aos 14, aos 30, aos 50, aos 70 ou aos 90. Cada fase traz necessidades únicas. Cada mulher traz uma história única."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. DIFERENCIAL (FUNDO MARROM) -->
+  <section id="diferencial" class="section-brown">
+    <div class="container">
+      <span class="section-tag">O Método Divina</span>
+      <h2 class="section-title">Você não precisa entrar por uma porta e sair com dez procedimentos impostos.</h2>
+      <p class="section-subtitle">Substituímos a pressão da venda rápida por um protocolo transparente focado no seu bem-estar a longo prazo.</p>
+
+      <div class="differentials-grid">
+        <div class="diff-card">
+          <div class="diff-number">01</div>
+          <h3 class="diff-title">Escuta Atenta</h3>
+          <p class="diff-text">Antes de olhar para a pele, ouvimos o que você sente ao olhar no espelho e quais são suas reais prioridades.</p>
+        </div>
+        <div class="diff-card">
+          <div class="diff-number">02</div>
+          <h3 class="diff-title">Avaliação Clínica</h3>
+          <p class="diff-text">Análise minuciosa da anatomia e saúde da pele para identificar o que possui indicação profissional real.</p>
+        </div>
+        <div class="diff-card">
+          <div class="diff-number">03</div>
+          <h3 class="diff-title">Planejamento</h3>
+          <p class="diff-text">Construção de um plano de cuidados gradual e consciente, respeitando suas vontades e limites.</p>
+        </div>
+        <div class="diff-card">
+          <div class="diff-number">04</div>
+          <h3 class="diff-title">Acompanhamento</h3>
+          <p class="diff-text">Você não passa pelo processo sozinha. Mantemos suporte e acompanhamento constante pós-atendimento.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. PROCEDIMENTOS (FUNDO ROSA) -->
+  <section id="procedimentos" class="section-rose">
+    <div class="container">
+      <div style="text-align: center;">
+        <span class="section-tag">Cuidado Direcionado</span>
+        <h2 class="section-title">Opções de cuidado para cada necessidade</h2>
+        <p class="section-subtitle" style="margin: 0 auto 40px;">Não existe um procedimento universalmente melhor. Existe o tratamento adequado para o seu objetivo — quando houver indicação técnica.</p>
+      </div>
+
+      <!-- Abas -->
+      <div class="tabs-nav">
+        <button class="tab-btn active" onclick="filterCategory('all', this)">Todos</button>
+        <button class="tab-btn" onclick="filterCategory('pele', this)">Saúde da Pele & Face</button>
+        <button class="tab-btn" onclick="filterCategory('corpo', this)">Corpo & Específicos</button>
+      </div>
+
+      <!-- Grelha de Procedimentos -->
+      <div class="proc-grid">
+        <!-- BOTOX -->
+        <div class="proc-card" data-cat="pele">
+          <div>
+            <img src="botox-arte.jpg" alt="Botox" class="proc-img">
+            <h4>Botox</h4>
+            <span class="proc-tag">Indicado após avaliação</span>
+            <p>Suavização de marcas de expressão dinâmicas para prevenir vincos profundos, preservando a sua movimentação facial natural.</p>
+          </div>
+          <button class="btn btn-secondary" style="width: 100%; border-radius: 20px; padding: 8px 16px; font-size: 0.85rem;" onclick="openModal('Botox (Toxina Botulínica)', 'Aplicação focada no relaxamento suave e estratégico dos músculos faciais responsáveis pelas rugas de expressão. Nosso compromisso é o resultado natural: suavizar as marcas do tempo sem perder a sua expressividade ou congelar os seus traços.')">Saiba Mais</button>
+        </div>
+
+        <!-- ULTRASSOM & RADIOFREQUÊNCIA -->
+        <div class="proc-card" data-cat="pele">
+          <div>
+            <img src="ultrassom-radiofrequencia.jpeg" alt="Ultrassom & Radiofrequência" class="proc-img">
+            <h4>Ultrassom & Radiofrequência</h4>
+            <span class="proc-tag">Indicado após avaliação</span>
+            <p>Estímulo térmico que auxilia no combate à flacidez e melhora a firmeza e textura da pele facial e corporal.</p>
+          </div>
+          <button class="btn btn-secondary" style="width: 100%; border-radius: 20px; padding: 8px 16px; font-size: 0.85rem;" onclick="openModal('Ultrassom & Radiofrequência', 'Tecnologia avançada não invasiva que aquece as camadas profundas da pele de forma controlada. Estimula a circulação sanguínea, a síntese de colágeno e a recuperação do tónus e firmeza do tecido.')">Saiba Mais</button>
+        </div>
+
+        <!-- BIOESTIMULADOR DE COLÁGENO -->
+        <div class="proc-card" data-cat="pele">
+          <div>
+            <img src="bioestimulador-colageno.jpeg" alt="Bioestimulador de Colágeno" class="proc-img">
+            <h4>Bioestimulador de Colágeno</h4>
+            <span class="proc-tag">Indicado após avaliação</span>
+            <p>Tratamento que ativa a produção natural de colágeno do próprio organismo, devolvendo a densidade e a sustentação cutânea.</p>
+          </div>
+          <button class="btn btn-secondary" style="width: 100%; border-radius: 20px; padding: 8px 16px; font-size: 0.85rem;" onclick="openModal('Bioestimulador de Colágeno', 'Substâncias biocompatíveis injetáveis que ativam as células do seu próprio corpo a produzirem novo colágeno de forma progressiva. O resultado é a recuperação da firmeza e textura da pele com extrema naturalidade ao longo do tempo.')">Saiba Mais</button>
+        </div>
+
+        <!-- LIPOENZIMÁTICA -->
+        <div class="proc-card" data-cat="corpo">
+          <div>
+            <img src="lipoenzimatica.jpg" alt="Lipoenzimática" class="proc-img">
+            <h4>Lipoenzimática</h4>
+            <span class="proc-tag">Indicado após avaliação</span>
+            <p>Aplicação direcionada para o auxílio na redução de gordura localizada em regiões pontuais do corpo.</p>
+          </div>
+          <button class="btn btn-secondary" style="width: 100%; border-radius: 20px; padding: 8px 16px; font-size: 0.85rem;" onclick="openModal('Lipoenzimática', 'Aplicação localizada de ativos lipolíticos em regiões estratégicas (como papada, abdómen ou flancos) para auxiliar na quebra de gordura persistente. O plano é traçado após minuciosa avaliação individual.')">Saiba Mais</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODAL DE DETALHES -->
+  <div class="modal-overlay" id="modal">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeModal()">&times;</button>
+      <h3 id="modal-title">Título do Procedimento</h3>
+      <p id="modal-desc">Descrição detalhada do procedimento selecionado...</p>
+      <a href="#agendamento" class="btn btn-primary" style="display: block; width: 100%;" onclick="closeModal()">Agendar Avaliação</a>
+    </div>
+  </div>
+
+  <!-- 5. AUTORIDADE (FUNDO MARROM) -->
+  <section id="autoridade" class="section-brown">
+    <div class="container">
+      <div class="authority-box">
+        <div>
+          <span class="section-tag">Responsabilidade & Técnica</span>
+          <h2 style="font-size: 2.6rem; margin-bottom: 20px;">Experiência não se improvisa.</h2>
+          <p>Quem cuida do seu rosto e da sua saúde merece ter mais do que certificados rápidos de final de semana. A Divina é liderada por uma trajetória de rigor clínico, dedicação e estudo contínuo.</p>
+        </div>
+        <div>
+          <ul class="auth-list">
+            <li><strong>+20 anos de experiência em Enfermagem</strong></li>
+            <li><strong>+5 anos de atuação em Estética Avançada</strong></li>
+            <li><strong>Graduação em Enfermagem & Estética</strong></li>
+            <li><strong>Especialização em Harmonização Orofacial</strong></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. FAQ (FUNDO ROSA) -->
+  <section id="faq" class="section-rose">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 50px;">
+        <span class="section-tag">Dúvidas Frequentes</span>
+        <h2 class="section-title">Perguntas comuns antes de agendar</h2>
+      </div>
+
+      <div class="faq-container">
+        <div class="faq-item">
+          <div class="faq-question">Preciso saber qual procedimento quero fazer antes de agendar?</div>
+          <div class="faq-answer">Não. O objetivo principal da primeira consulta é conversarmos e avaliarmos juntas o que faz sentido para você.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Como funciona a avaliação individualizada?</div>
+          <div class="faq-answer">É um momento exclusivo onde escutamos suas queixas e desenhamos um plano personalizado, sem obrigatoriedade de pacotes prontos.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. CTA FINAL (FUNDO MARROM) -->
+  <section id="agendamento" class="cta-final section-brown">
+    <div class="container">
+      <span class="section-tag">Primeiro Passo</span>
+      <h2 class="section-title" style="font-size: 3rem;">Seu momento começa com uma simples conversa.</h2>
+      <p class="section-subtitle" style="margin: 0 auto 40px;">Conte-nos o que você gostaria de cuidar. Nossa avaliação é o ponto de partida para um cuidado feito sob medida.</p>
+
+      <a href="[LINK_WHATSAPP]" target="_blank" class="btn btn-primary">Agendar minha avaliação pelo WhatsApp</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Divina Estética. Todos os direitos reservados. Cuidado consciente e individualizado.</p>
+    </div>
+  </footer>
+
+  <script>
+    function filterCategory(category, btnElement) {
+      const buttons = document.querySelectorAll('.tab-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      btnElement.classList.add('active');
+
+      const cards = document.querySelectorAll('.proc-card');
+      cards.forEach(card => {
+        if (category === 'all' || card.getAttribute('data-cat') === category) {
+          card.classList.remove('hide');
+        } else {
+          card.classList.add('hide');
+        }
+      });
+    }
+
+    function openModal(title, description) {
+      document.getElementById('modal-title').innerText = title;
+      document.getElementById('modal-desc').innerText = description;
+      document.getElementById('modal').classList.add('open');
+    }
+
+    function closeModal() {
+      document.getElementById('modal').classList.remove('open');
+    }
+
+    window.onclick = function(event) {
+      const modal = document.getElementById('modal');
+      if (event.target === modal) {
+        closeModal();
+      }
+    }
+  </script>
+</body>
+</html>
